@@ -368,6 +368,48 @@
       color: var(--text-main);
     }
 
+    .faq-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 18px 20px;
+      box-shadow: 0 16px 32px rgba(47, 42, 37, 0.08);
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      font-weight: 600;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      font-size: 20px;
+      color: var(--accent-dark);
+    }
+
+    .faq-item[open] summary::after {
+      content: "−";
+    }
+
+    .faq-item p {
+      margin-top: 12px;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+
     .testimonial-meta {
       display: flex;
       flex-direction: column;
@@ -683,6 +725,35 @@
             <a href="https://calendly.com/" target="_blank" rel="noreferrer">Schedule via Calendly</a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="section-header">
+        <h2>Frequently asked questions</h2>
+        <p>Everything you need to know about partnering with ThirdEye Consultancy.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How long does a typical project take?</summary>
+          <p>Most website builds take 4–8 weeks, while mobile apps vary based on complexity and testing.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you handle both design and development?</summary>
+          <p>Yes. Our team handles discovery, UX/UI design, and full-stack development in one workflow.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can you work with our existing team?</summary>
+          <p>Absolutely. We can plug into your product or engineering team and collaborate in your tools.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What happens after launch?</summary>
+          <p>We offer monitoring, updates, and growth support to keep your product stable and improving.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do we get started?</summary>
+          <p>Send a quick inquiry and we will respond with a roadmap, timeline, and tailored proposal.</p>
+        </details>
       </div>
     </section>
 
