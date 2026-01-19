@@ -209,6 +209,84 @@
       color: var(--text-main);
     }
 
+    .section {
+      margin-top: 80px;
+      background: rgba(255, 255, 255, 0.72);
+      border-radius: 32px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-header {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+    }
+
+    .section-header p {
+      max-width: 640px;
+      color: var(--text-sub);
+      font-size: 16px;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card,
+    .testimonial-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 18px 40px rgba(47, 42, 37, 0.08);
+      display: grid;
+      gap: 16px;
+    }
+
+    .service-card h3,
+    .testimonial-card h3 {
+      font-size: 20px;
+    }
+
+    .service-card p,
+    .testimonial-card p {
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+
+    .service-card ul {
+      padding-left: 18px;
+      color: var(--text-sub);
+      display: grid;
+      gap: 8px;
+    }
+
+    .testimonial-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-weight: 600;
+    }
+
+    .testimonial-meta span {
+      font-weight: 500;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+
+    footer {
+      margin-top: 72px;
+      text-align: center;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+
     .mobile-toggle {
       display: none;
       background: var(--white);
@@ -261,6 +339,10 @@
       .trust-row {
         border-radius: 24px;
       }
+
+      .section {
+        padding: 28px 22px;
+      }
     }
   </style>
 </head>
@@ -301,8 +383,8 @@
     <section class="hero">
       <div class="hero-pill">
         <img
-          src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=500&q=80"
-          alt="Volunteer supporting a community member"
+          src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80"
+          alt="Team collaborating on digital product strategy"
         />
         <strong>Tech. Ideas. Solutions.</strong>
       </div>
@@ -312,7 +394,8 @@
         tech.
       </h1>
       <p class="hero-text">
-        We help startups and growing businesses design, build, and maintain reliable digital products.
+        We deliver website development, Android &amp; iOS mobile apps, and ongoing maintenance that keeps
+        your digital products reliable, secure, and ready to scale.
       </p>
       <!-- <div class="hero-cta">
         <button class="primary-button">Donate</button>
@@ -323,6 +406,87 @@
       </div> -->
     </section>
 
+    <section class="section" id="services">
+      <div class="section-header">
+        <h2>Digital services built for ambitious teams</h2>
+        <p>
+          We combine product thinking, engineering excellence, and long-term support so your business can
+          launch faster, iterate with confidence, and keep customers delighted.
+        </p>
+      </div>
+      <div class="section-grid">
+        <article class="service-card">
+          <h3>Website Development</h3>
+          <p>Modern, responsive websites that communicate your value and convert visitors into clients.</p>
+          <ul>
+            <li>UX/UI design and rapid prototyping</li>
+            <li>Performance-first, SEO-ready builds</li>
+            <li>Content management setup and training</li>
+          </ul>
+        </article>
+        <article class="service-card">
+          <h3>Android &amp; iOS Applications</h3>
+          <p>Native and cross-platform apps that feel smooth, secure, and intuitive across devices.</p>
+          <ul>
+            <li>Feature roadmaps and MVP delivery</li>
+            <li>API integrations and real-time data</li>
+            <li>App store submission support</li>
+          </ul>
+        </article>
+        <article class="service-card">
+          <h3>Maintenance &amp; Growth Support</h3>
+          <p>We keep your digital products healthy, updated, and aligned with evolving business goals.</p>
+          <ul>
+            <li>Monitoring, analytics, and uptime care</li>
+            <li>Security patches and compliance updates</li>
+            <li>Continuous improvements and feature releases</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="section-header">
+        <h2>What our partners say</h2>
+        <p>
+          ThirdEye Consultancy works like an extension of your team, turning ideas into measurable business
+          wins.
+        </p>
+      </div>
+      <div class="section-grid">
+        <article class="testimonial-card">
+          <p>
+            “Their team translated our vision into a polished website and booking system in under six weeks.
+            We saw a 38% lift in online enquiries within the first month.”
+          </p>
+          <div class="testimonial-meta">
+            Ava Richardson
+            <span>Operations Lead, Brightwell Health</span>
+          </div>
+        </article>
+        <article class="testimonial-card">
+          <p>
+            “The mobile app launch was smooth, with proactive testing and weekly progress demos. We finally
+            have a product our sales team is proud to show.”
+          </p>
+          <div class="testimonial-meta">
+            Liam Ortega
+            <span>Head of Product, Northline Logistics</span>
+          </div>
+        </article>
+        <article class="testimonial-card">
+          <p>
+            “ThirdEye’s maintenance plan means we sleep easy. They handle updates, monitor performance, and
+            keep our platform compliant without us chasing them.”
+          </p>
+          <div class="testimonial-meta">
+            Priya Nair
+            <span>Founder, Coastline Fintech</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <!-- <section class="trust-row">
       <span><strong>Quick Donate</strong></span>
       <span>GoFundMe</span>
@@ -330,6 +494,9 @@
       <span>Medtronic</span>
       <span>Scroll Down</span>
     </section> -->
+    <footer>
+      © 2026 IT Consultancy. All rights reserved.
+    </footer>
   </div>
 
   <script>
