@@ -2,144 +2,346 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IT Consultancy | Web & Mobile App Development</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hope Rise | Support That Lifts People</title>
+  <meta
+    name="description"
+    content="Hope Rise is a community-first organization delivering care, connection, and support to people when it matters most."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg-light: #fff5e8;
+      --bg-mid: #fce6d2;
+      --bg-deep: #f5d3b1;
+      --accent: #f6a159;
+      --accent-dark: #e98a3f;
+      --text-main: #2f2a25;
+      --text-sub: #5b524a;
+      --white: #ffffff;
+      --shadow: 0 24px 60px rgba(32, 24, 18, 0.12);
+    }
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  <meta name="description" content="Professional IT consultancy offering website development, Android & iOS app development, and maintenance services."/>
+    body {
+      font-family: "Manrope", sans-serif;
+      background: linear-gradient(160deg, var(--bg-light) 0%, var(--bg-mid) 55%, var(--bg-deep) 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 24px 64px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: var(--white);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .brand-mark span {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 10px 10px 0 0 rgba(246, 161, 89, 0.45), -10px 10px 0 0 rgba(246, 161, 89, 0.25);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-weight: 500;
+      color: var(--text-sub);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .ghost-button {
+      border: 1px solid rgba(53, 45, 39, 0.18);
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .primary-button {
+      background: var(--accent);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 999px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(246, 161, 89, 0.35);
+    }
+
+    .primary-button:hover {
+      background: var(--accent-dark);
+    }
+
+    .hero {
+      margin-top: 80px;
+      display: grid;
+      gap: 32px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4.75rem);
+      line-height: 1.05;
+      font-weight: 800;
+    }
+
+    .hero h1 span {
+      color: var(--accent-dark);
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 8px 18px 8px 8px;
+      border-radius: 999px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-pill img {
+      width: 120px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: 999px;
+    }
+
+    .hero-text {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 18px;
+      color: var(--text-sub);
+    }
+
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .secondary-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .secondary-link span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(53, 45, 39, 0.2);
+      background: var(--white);
+    }
+
+    .trust-row {
+      margin-top: 72px;
+      padding: 18px 24px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 999px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 18px;
+      align-items: center;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-sub);
+    }
+
+    .trust-row strong {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: var(--white);
+      border: 1px solid rgba(53, 45, 39, 0.18);
+      border-radius: 12px;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 18px;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 18px;
+    }
+
+    .mobile-menu a {
+      font-weight: 600;
+    }
+
+    @media (max-width: 960px) {
+      .nav-links,
+      .nav-actions {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: inline-flex;
+      }
+
+      .hero {
+        margin-top: 56px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-pill {
+        flex-direction: column;
+        padding: 12px;
+      }
+
+      .hero-pill img {
+        width: 100%;
+        height: 140px;
+      }
+
+      .trust-row {
+        border-radius: 24px;
+      }
+    }
+  </style>
 </head>
+<body>
+  <div class="page">
+    <nav class="nav">
+      <div class="brand">
+        <div class="brand-mark"><span></span></div>
+        <span>Hope Rise</span>
+      </div>
+      <div class="nav-links">
+        <a href="#">Who We Are</a>
+        <a href="#">What We Do</a>
+        <a href="#">News &amp; Events</a>
+        <a href="#">Get Involved</a>
+      </div>
+      <div class="nav-actions">
+        <button class="ghost-button">Call Us</button>
+        <button class="primary-button">Donate</button>
+      </div>
+      <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7H20" stroke="#2f2a25" stroke-width="2" stroke-linecap="round" />
+          <path d="M4 12H20" stroke="#2f2a25" stroke-width="2" stroke-linecap="round" />
+          <path d="M4 17H20" stroke="#2f2a25" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">Who We Are</a>
+      <a href="#">What We Do</a>
+      <a href="#">News &amp; Events</a>
+      <a href="#">Get Involved</a>
+      <button class="ghost-button">Call Us</button>
+      <button class="primary-button">Donate</button>
+    </div>
 
-<body class="bg-slate-50 text-slate-800">
-
-  <!-- HERO -->
-  <section class="bg-gradient-to-br from-slate-900 to-blue-900 text-white">
-    <div class="max-w-6xl mx-auto px-6 py-24 text-center">
-      <span class="uppercase tracking-widest text-sm text-blue-300">
-        IT Consultancy
-      </span>
-      <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-6 leading-tight">
-        Websites & Mobile Apps<br class="hidden md:block" />
-        Built for Growth
+    <section class="hero">
+      <div class="hero-pill">
+        <img
+          src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=500&q=80"
+          alt="Volunteer supporting a community member"
+        />
+        <strong>Compassion. Care. Community.</strong>
+      </div>
+      <h1>
+        Hope Rise is <span>Support</span>
+        <br />
+        for Every Journey
       </h1>
-      <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10">
-        We help startups and growing businesses design, build, and maintain reliable digital products.
+      <p class="hero-text">
+        We provide safe spaces, personal advocacy, and essential resources so people can heal and thrive.
+        Join us in creating brighter outcomes together.
       </p>
-      <a href="#contact"
-         class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-xl font-semibold transition">
-        Book a Free Consultation
-      </a>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="py-24">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-16">
-        Our Services
-      </h2>
-
-      <div class="grid md:grid-cols-3 gap-10">
-        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition">
-          <h3 class="text-xl font-semibold mb-4">Website Development</h3>
-          <p class="text-slate-600">
-            High-performance business websites and landing pages focused on clarity, speed, and conversions.
-          </p>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition">
-          <h3 class="text-xl font-semibold mb-4">Mobile App Development</h3>
-          <p class="text-slate-600">
-            Native Android & iOS applications built with scalable architecture and long-term maintenance in mind.
-          </p>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition">
-          <h3 class="text-xl font-semibold mb-4">Maintenance & Support</h3>
-          <p class="text-slate-600">
-            Continuous support, performance optimization, bug fixes, and feature enhancements as you grow.
-          </p>
-        </div>
+      <div class="hero-cta">
+        <button class="primary-button">Donate</button>
+        <a class="secondary-link" href="#">
+          I need help
+          <span>➜</span>
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- WHY US -->
-  <section class="bg-white py-24">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-16">
-        Why Work With Us
-      </h2>
+    <section class="trust-row">
+      <span><strong>Quick Donate</strong></span>
+      <span>GoFundMe</span>
+      <span>Cancer Care</span>
+      <span>Medtronic</span>
+      <span>Scroll Down</span>
+    </section>
+  </div>
 
-      <div class="grid md:grid-cols-4 gap-10 text-center">
-        <div>
-          <h4 class="font-semibold mb-2">Clean Architecture</h4>
-          <p class="text-slate-600 text-sm">
-            Easy to maintain, scale, and hand over.
-          </p>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-2">Performance First</h4>
-          <p class="text-slate-600 text-sm">
-            Fast load times and smooth experiences.
-          </p>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-2">Clear Communication</h4>
-          <p class="text-slate-600 text-sm">
-            No jargon. No surprises.
-          </p>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-2">Long-Term Partner</h4>
-          <p class="text-slate-600 text-sm">
-            We support you beyond launch.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <script>
+    const toggle = document.querySelector(".mobile-toggle");
+    const menu = document.getElementById("mobileMenu");
 
-  <!-- PROCESS -->
-  <section class="py-24">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-16">
-        Our Process
-      </h2>
-
-      <div class="grid md:grid-cols-5 gap-6 text-center text-sm">
-        <div class="bg-white p-6 rounded-xl shadow-sm">Discovery</div>
-        <div class="bg-white p-6 rounded-xl shadow-sm">Planning</div>
-        <div class="bg-white p-6 rounded-xl shadow-sm">Development</div>
-        <div class="bg-white p-6 rounded-xl shadow-sm">Testing</div>
-        <div class="bg-white p-6 rounded-xl shadow-sm">Launch & Support</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="bg-slate-900 text-white py-24">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-6">
-        Let’s Talk About Your Project
-      </h2>
-      <p class="text-slate-300 mb-10">
-        Share your idea and we’ll help you turn it into a reliable product.
-      </p>
-
-      <!-- Replace email -->
-      <a href="mailto:thirdeyeconsultancyptyltd@gmail.com"
-         class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-xl font-semibold transition">
-        Contact Us
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-slate-950 text-slate-500 py-6 text-center text-sm">
-    © 2026 Thirdeye Consultancy Pty Ltd. All rights reserved.
-  </footer>
-
+    toggle.addEventListener("click", () => {
+      const isOpen = menu.style.display === "flex";
+      menu.style.display = isOpen ? "none" : "flex";
+      toggle.setAttribute("aria-expanded", String(!isOpen));
+    });
+  </script>
 </body>
 </html>
