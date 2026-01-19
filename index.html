@@ -314,6 +314,8 @@
       box-shadow: 0 16px 30px rgba(47, 42, 37, 0.08);
       display: grid;
       gap: 16px;
+      align-content: start;
+      min-height: 280px;
     }
 
     .tech-stack-group h3 {
@@ -324,9 +326,10 @@
     }
 
     .tech-stack-items {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      align-content: start;
     }
 
     .tech-stack-items span {
@@ -338,6 +341,7 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--text-main);
+      text-align: center;
     }
 
     .cta-grid {
